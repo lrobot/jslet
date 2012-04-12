@@ -1,9 +1,9 @@
 /* example of a bookmarket 
-javascript:(function(){d=document;w=window;w.bmleta='wikiframe';if(w.bmlet!==undefined){bmlet(w.bmleta);}else{d.body.appendChild(d.createElement('script')).src='https://raw.github.com/lrobot/jslet/master/js/bookmark.js';}})();
+javascript:(function(){d=document;w=window;w.bmleta='wikiframe';if(w.bmlet!==undefined){bmlet(w.bmleta);}else{d.body.appendChild(d.createElement('script')).src='https://raw.github.com/lrobot/jslet/master/js/bm.js';}})();
 */
 
 /* other extend usage 
-javascript:(function(){d=document;w=window;w.bmleta='wikiframe';if(w.bmlet!==undefined){bmlet(w.bmleta);}else{d.body.appendChild(d.createElement('script')).src='https://raw.github.com/lrobot/jslet/master/js/bookmark.js?'+new Date().getTime();}})();
+javascript:(function(){d=document;w=window;w.bmleta='wikiframe';if(w.bmlet!==undefined){bmlet(w.bmleta);}else{d.body.appendChild(d.createElement('script')).src='https://raw.github.com/lrobot/jslet/master/js/bm.js?'+new Date().getTime();}})();
 */
 w = window;
 d = document;
@@ -34,7 +34,7 @@ function getSelText() {
 	return s;
 }
 
-function bookmark_main(app) {
+function wikiframe() {
 			if ($("#wikiframe").length == 0) {
 				var s = "";
 				s = getSelText();
@@ -66,7 +66,11 @@ function bookmark_main(app) {
 				$("#wikiframe iframe").slideUp(500);
 				setTimeout("$('#wikiframe').remove()", 750);
 			});
-		}
+}
+
+function bookmark_main(app) {
+	window[app]();
+}
 
 (function(){
 	// the minimum version of jQuery we want
