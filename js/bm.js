@@ -69,7 +69,8 @@ function wikiframe() {
 }
 
 function bookmark_main(app) {
-	window[app]();
+	//window[app]();
+	wikiframe();
 }
 
 (function(){
